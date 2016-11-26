@@ -23,6 +23,8 @@ wait.until(page_is_loaded)
 
 email_field = driver.find_element_by_name("uid")
 
+#for logging in to iiit hibiscus
+
 email_field.send_keys("-----COLLEGE iD----")
 
 password_field = driver.find_element_by_name("pwd")
@@ -71,6 +73,9 @@ tabs=driver.window_handles
 print tabs[1]
 driver.switch_to_window(tabs[1])
 print driver.current_url+" o"
+
+#for first notice
+
 driver.find_element_by_xpath("""/html/body/div/div[2]/table/tbody/tr[1]/td[2]/a""").click()
 wait.until(page_is_loaded)
 
@@ -97,7 +102,7 @@ with open('C:\Users\hp\Desktop\shivank\official.csv') as csvfile:
         
 
 
-        
+        #login to way2sms
 
         if __name__ == "__main__":    
             username = "9938147181"
@@ -108,7 +113,7 @@ with open('C:\Users\hp\Desktop\shivank\official.csv') as csvfile:
         #logging into the sms site
             url ='http://site24.way2sms.com/Login1.action?'
             data = 'username='+username+'&password='+passwd+'&Submit=Sign+in'
-        #For cookies
+       
 
             cj= cookielib.CookieJar()
             opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
@@ -119,7 +124,7 @@ with open('C:\Users\hp\Desktop\shivank\official.csv') as csvfile:
                 usock =opener.open(url, data)
             except IOError:
                 print "error"
-            #return()
+           
 
             jession_id =str(cj).split('~')[1].split(' ')[0]
             send_sms_url = 'http://site24.way2sms.com/smstoss.action?'
@@ -129,10 +134,10 @@ with open('C:\Users\hp\Desktop\shivank\official.csv') as csvfile:
                 sms_sent_page = opener.open(send_sms_url,send_sms_data)
             except IOError:
                 print "error"
-            #return()
+
 
             print "success" 
-        #return ()
+      
         print message
 
 
